@@ -1,28 +1,17 @@
 import {
   BrowserRouter as Router,
   Switch,
-  Route,
-  Link
+  Route
 } from 'react-router-dom'
 import Search from './pages/Search'
 import Saved from './pages/Saved'
+import Appbar from './components/Appbar'
 
 const App = () => {
   return (
     <Router>
       <div>
-        <ul>
-          <li>
-            <Link to='/'>
-              Search
-            </Link>
-          </li>
-          <li>
-            <Link to='/saved'>
-              Saved
-            </Link>
-          </li>
-        </ul>
+        <Appbar />
         <Switch>
           <Route exact path='/'>
             <Search />
