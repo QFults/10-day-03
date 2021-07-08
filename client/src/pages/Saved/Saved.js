@@ -1,6 +1,17 @@
-const Saved = () => {
+import Display from '../../components/Display'
+
+const Saved = props => {
   return (
-    <h1>This is the saved page.</h1>
+    <div>
+      {
+        props.pokemons.map((pokemon, i) => (
+          <Display
+            key={i}
+            pokemon={pokemon}
+          />
+        ))
+      }
+    </div>
   )
 }
 

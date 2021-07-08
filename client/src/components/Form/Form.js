@@ -6,14 +6,25 @@ import {
   Input
 } from 'reactstrap'
 
-const Form = () => {
+const Form = props => {
   return (
     <Frm>
       <FormGroup>
         <Label for='search'>Search</Label>
-        <Input type='email' name='search' placeholder='pikachu' />
+        <Input
+          type='text'
+          name='search'
+          placeholder='pikachu'
+          value={props.search}
+          onChange={props.handleInputChange}
+        />
       </FormGroup>
-      <Button color='primary'>Find Pokemon</Button>
+      <Button
+        color='primary'
+        onClick={props.handleSearchPokemon}
+      >
+        Find Pokemon
+      </Button>
     </Frm>
   )
 }

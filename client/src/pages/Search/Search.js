@@ -5,8 +5,9 @@ import {
   Jumbotron
 } from 'reactstrap'
 import Form from '../../components/Form'
+import Display from '../../components/Display'
 
-const Search = () => {
+const Search = props => {
   return (
     <Container>
       <Row>
@@ -18,10 +19,21 @@ const Search = () => {
       </Row>
       <Row>
         <Col sm={6}>
-          <Form />
+          <Form
+            search={props.search}
+            handleInputChange={props.handleInputChange}
+            handleSearchPokemon={props.handleSearchPokemon}
+          />
         </Col>
         <Col sm={6}>
-          display
+          {
+            props.pokemon.hasOwnProperty('name')
+              ? <Display
+                  pokemon={props.pokemon}
+                  handleSavePokemon={props.handleSavePokemon}
+                />
+              : null
+          }
         </Col>
       </Row>
     </Container>
